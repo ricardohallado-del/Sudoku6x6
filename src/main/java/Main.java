@@ -1,4 +1,4 @@
-package com.example.sudoku6x6;
+package main.java;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,12 +10,15 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(
-            Main.class.getResource("menu-view.fxml")
+                Main.class.getResource("menu-view.fxml")
         );
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Sudoku 6x6");
-        stage.setScene(scene);
+        scene.getStylesheets().add(
+                Main.class.getResource("styles.css").toExternalForm()
+        );
+        stage.setTitle("Sudoku 6×6");
         stage.setResizable(false);
+        stage.setScene(scene);
         stage.show();
     }
 
