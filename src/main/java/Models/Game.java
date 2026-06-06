@@ -1,4 +1,4 @@
-package main.java.com.example.sudoku6x6.Models;
+package Models;
 
 import java.util.ArrayList;
 
