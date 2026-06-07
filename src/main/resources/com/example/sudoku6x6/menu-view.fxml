@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="421.0" prefWidth="500" styleClass="root-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sudoku6x6.Controllers.MenuController">
+
+    <top>
+        <VBox alignment="CENTER" spacing="8" styleClass="banner">
+            <padding><Insets bottom="32" left="20" right="20" top="44" /></padding>
+
+            <Label prefHeight="51.0" prefWidth="236.0" styleClass="title-main" text="SUGOKU" textAlignment="CENTER">
+            <font>
+               <Font size="26.0" />
+            </font></Label>
+            <Label styleClass="title-sub" text="¿Podras resolver este 6x6?" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" prefHeight="416.0" prefWidth="500.0" spacing="32">
+            <padding><Insets bottom="28" left="50" right="50" top="28" /></padding>
+
+            <!-- Preview tablero completo -->
+            <StackPane alignment="CENTER">
+                <GridPane fx:id="previewGrid" alignment="CENTER" hgap="3" styleClass="preview-grid" vgap="3" />
+            </StackPane>
+
+            <Label styleClass="tagline" text="Juega, ejercita tu mente y diviertete a la vez... BIENVENIDO AMIGO" textAlignment="CENTER" wrapText="true" />
+
+            <VBox alignment="CENTER" spacing="12">
+                <Button fx:id="btnJugar" onAction="#onPlay" prefHeight="52" prefWidth="260" styleClass="btn-primary" text="▶   JUGAR" />
+                <Button fx:id="btnInstrucciones" onAction="#onInstruc" prefHeight="44" prefWidth="260" styleClass="btn-secondary" text="?   Instrucciones" />
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER">
+            <padding><Insets bottom="16" top="6" /></padding>
+        </HBox>
+    </bottom>
+
+</BorderPane>
