@@ -109,20 +109,25 @@ public class Game {
     }
 
     /**
-     * Checks if the player has completed the board by verifying
-     * @return true if the board is fully filled, false otherwise
+     * Checks if the player has completed the board correctly by verifying
+     * that every cell is filled and that no cell violates the Sudoku rules
+     * (unique values per row, column and 2x3 block).
+     * @return true if the board is fully and correctly filled, false otherwise
      */
     public boolean winUser(){
         for(int i=0;i<6;i++){
             for(int j=0;j<6;j++){
-                if(tab.get(i).get(j) == 0){
+                int val = tab.get(i).get(j);
+                if(val == 0){
+                    return false;
+                }
+                if(!validNum(i, j, val)){
                     return false;
                 }
             }
         }
         return true;
     }
-
     /**
      * Returns the value stored in a specific cell of the board.
      * @param row the row index.
